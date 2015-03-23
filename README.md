@@ -82,13 +82,15 @@ syslinux, memdisk, mcopy, mkfs.vfat
 	        COMBOOT poweroff.com
 	```
 4. Copy Over Necessary Binaries
+
 	```
 	sudo cp /usr/lib/syslinux/{hdt.c32,menu.c32,reboot.c32,poweroff.com,memdisk} /media/usb/syslinux
 	```
 5. Copy Over All ISO's to Mountpoint
 
 6. Install mbr
+
 	```
-	dd if=/usr/share/syslinux/mbr.bin of=/dev/sdx
+	dd if=/usr/share/syslinux/bios/mbr.bin of=/dev/sdx
 	```
 
