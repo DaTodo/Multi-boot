@@ -7,14 +7,16 @@ syslinux, memdisk, mcopy, mkfs.vfat
 1. Partition drive big enough for all the iso's and format to fat32
 2. Install syslinux
 
+```
 syslinux /dev/sdx1 
 
 mkdir /media/usb/syslinux
 
 vim /media/usb/syslinux/syslinux.cfg
+```
 
 3. Edit Config file as Follows
-
+```
 # Config file for Syslinux -
 # Default entry
 DEFAULT hdd
@@ -78,12 +80,15 @@ LABEL reboot
 LABEL off
         MENU LABEL Power Off
         COMBOOT poweroff.com
-
+```
 ###Copy Over Necessary Binaries
+```
 sudo cp /usr/lib/syslinux/{hdt.c32,menu.c32,reboot.c32,poweroff.com,memdisk} /media/usb/syslinux
-
+```
 ###Copy Over All ISO's to Mountpoint
 
 ###Install mbr
+```
 dd if=/usr/share/syslinux/mbr.bin of=/dev/sdx
+```
 
