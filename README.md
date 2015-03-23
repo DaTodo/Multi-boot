@@ -1,16 +1,15 @@
 # Multi-boot
+============
 Create a multi-boot usb drive using syslinux
 # Requirements
-   syslinux;
-   memdisk;
-   mcopy;
-   mkfs.vfat;
-  
+syslinux
+memdisk
+mcopy
+mkfs.vfat
   
 partition drive with a partition big enough for all the iso's and format to fat32
 
-# Install syslinux
-syslinux /dev/sdx1 #use created partition;
+syslinux /dev/sdx1 #use created partition; //Install syslinux
 
 mkdir /media/usb/syslinux;
 vim /media/usb/syslinux/syslinux.cfg;
