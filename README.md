@@ -1,18 +1,16 @@
 # Multi-boot
 Create a multi-boot usb drive using syslinux
 # Requirements
-  # syslinux
-  # memdisk
-  # mcopy
-  # mkfs.vfat
+   syslinux
+   memdisk
+   mcopy
+   mkfs.vfat
   
   
-# partition drive with a partition big enough for all the iso's and format to fat32
+partition drive with a partition big enough for all the iso's and format to fat32
 
 # Install syslinux
 syslinux /dev/sdx1 #use created partition
-
-#mount partition and change to mountpoint
 
 mkdir /media/usb/syslinux
 vim /media/usb/syslinux/syslinux.cfg
@@ -84,10 +82,10 @@ LABEL off
         COMBOOT poweroff.com
 
 
-# Copy Over necessary binaries
+//Copy Over necessary binaries
 sudo cp /usr/lib/syslinux/{hdt.c32,menu.c32,reboot.c32,poweroff.com,memdisk} /media/usb/syslinux
 
-# copy over all iso's to mountpoint
+//copy over all iso's to mountpoint
 
 # Install mbr
 dd if=/usr/share/syslinux/mbr.bin of=/dev/sdx
